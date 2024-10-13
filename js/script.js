@@ -65,7 +65,7 @@ const typed = new Typed('.multiple-text', {
 // /==================== typed js ====================/
 
 const typed = new Typed('.multiple-text', {
-    strings: ['Frontend Developer', 'Web Developer'],
+    strings: ['Frontend', 'Machine Learning',' Natural Language Processing (NLP)', 'Java', 'Python'],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 10
