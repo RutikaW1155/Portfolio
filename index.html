@@ -45,7 +45,7 @@
             <a href="https://www.linkedin.com/in/rutika-wagalekar-5906a725b/"><i class="bx bxl-linkedin"></i></box-icon></a>
           
          </div>
-         <a href="https://drive.google.com/drive/folders/1KRGtvZEfMEAgqTWU075B9lLlLTcesAcC?usp=drive_link" class="btn">Download CV</a>
+         <a href="https://drive.google.com/file/d/1rW0r_9B_23EzK28yJWeDvigSqz6IIvD8/view?usp=sharing" class="btn">Download CV</a>
         </div>
         <div class="home-img"></div>
         <img src="profile_new.png.jpg" alt=""  style="border-radius:50%;   border: 0.7rem solid var(--main-color);   box-shadow: 0 0 4rem var(--main-color);
@@ -97,7 +97,7 @@
 
         <select class="form-select" aria-label="Default select example" style="background-color: #323946; color:white; margin-left:2%;">
           <option selected>Skills</option>
-          <option value="1">Frontend</option>
+          <option value="1">Web Dev</option>
           <option value="2">ML</option>
           <option value="3">DL</option>
      
@@ -127,6 +127,29 @@
   <h2 class="heading">My <span>Projects</span></h2>
 
   <div class="projects-container">
+
+    <div class="projects-box">
+      <i class="bx bx-code-alt"></i>
+      <h3> Chanakya Niti</h3>
+      <p>Chanakya Niti is a web platform that showcases Acharya Chanakya’s teachings on leadership, strategy, and wisdom. It features an AI-powered chatbot that helps users explore Chanakya’s principles interactively, answering questions and providing insights based on his Niti Shastra. </p>
+            <a href="https://github.com/RutikaW1155/Chanakya_Niti" class="btn"> Read More</a>
+    </div>
+
+    <div class="projects-box">
+      <i class="bx bx-code-alt"></i>
+      <h3>Gyan Sangam Munch</h3>
+      <p>Gyan Sangam Munch is a knowledge-sharing platform that fosters learning, discussions, and intellectual growth. It brings together students, professionals, and experts to exchange ideas, insights, and wisdom on various topics, promoting collaboration and continuous learning.  </p>
+            <a href="https://github.com/a-t-h-a-r-v/AlumniBridge" class="btn"> Read More</a>
+    </div>
+
+    <div class="projects-box">
+      <i class="bx bx-code-alt"></i>
+      <h3>Academic Chatbot</h3>
+      <p>Our Academic Chatbot leverages Retrieval-Augmented Generation (RAG), combining vector search and keyword-based search to fetch accurate academic information. This enhances contextual understanding and ensures precise, well-sourced responses. </p>
+            <a href="https://github.com/RutikaW1155/Academic_Chatbot" class="btn"> Read More</a>
+    </div>
+
+
     <div class="projects-box">
       <i class="bx bx-code-alt"></i>
       <h3>Bhagavad Gita</h3>
@@ -203,26 +226,27 @@
   </div>
 </section>
     <!-- contact section design -->
-  <section class="contact" id="contact">
-    <h2 class="heading">Contact <span>Me!</span></h2>
-    <form action="#">
-      <div class="input-box">
-        <input type="text" placeholder="Full Name">
-        <input type="email" placeholder="Email Address">
-      </div>
-      <div class="input-box">
-        <input type="number" placeholder="Mobile number">
-        <input type="text" placeholder="Email Subject">
-      </div>
-      <textarea name="" id="" cols="30" rows="10" placeholder="Write Message"></textarea>
-      <input type="submit" value="Send Message" class="btn">
-    </form>
+    <section class="contact" id="contact">
+      <h2 class="heading">Contact <span>Me!</span></h2>
+      <form id="contactForm">
+          <div class="input-box">
+              <input type="text" id="name" placeholder="Full Name" required>
+              <input type="email" id="email" placeholder="Email Address" required>
+          </div>
+          <div class="input-box">
+              <input type="number" id="mobile" placeholder="Mobile Number" required>
+              <input type="text" id="subject" placeholder="Email Subject" required>
+          </div>
+          <textarea id="message" cols="30" rows="10" placeholder="Write Message" required></textarea>
+          <input type="submit" value="Send Message" class="btn">
+      </form>
   </section>
+   
 
     <!-- footer design -->
 <footer class="footer">
   <div class="footer-text">
-    <p>Copyright &copy; 2023 by Codehal | All Right Reserved.</p>
+    <p>Copyright &copy; 2025 by Codehal | All Right Reserved.</p>
   </div>
 
   <div class="footer-iconTop">
@@ -240,5 +264,31 @@
 
  <!-- custom js -->
  <script src="js/script.js"></script>
+ 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  (function() {
+      emailjs.init("KUCiAMCMrQ3lIGnKU");  // Replace with your EmailJS Public Key
+  })();
+
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      emailjs.send("service_pxv9e4q", "template_vktk5sz", {
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          mobile: document.getElementById("mobile").value,
+          subject: document.getElementById("subject").value,
+          message: document.getElementById("message").value
+      }).then(
+          function(response) {
+              alert("Email sent successfully!");
+          },
+          function(error) {
+              alert("Failed to send email. Please try again.");
+          }
+      );
+  });
+</script>
 </body>
 </html>
